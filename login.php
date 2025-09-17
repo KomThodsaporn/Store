@@ -35,33 +35,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>เข้าสู่ระบบ</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
 </head>
 
-<body>
-    <!-- STEP 12 -->
-    <?php if (isset($_GET['register']) && $_GET['register'] === 'success'): ?>
-        <div class="alert alert-success">สมัครสมาชิกสำเร็จ กรุณาเข้าสู่ระบบ</div>
-    <?php endif; ?>
-    <!-- STEP 13 -->
-    <?php if (!empty(!empty($error))): ?>
-        <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>
-    <?php endif; ?>
-    <form method="post" class="row g-3">
-        <div class="col-md-6">
-            <label for="username_or_email" class="form-label">ชื่อผู้ใช้หรืออีเมล</label>
-            <input type="text" name="username_or_email" id="username_or_email" class="form-control" required>
+<body class="bg-light">
+    <div class="container">
+        <div class="row justify-content-center vh-100 align-items-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>เข้าสู่ระบบ</h3>
+                    </div>
+                    <div class="card-body">
+                        <?php if (isset($_GET['register']) && $_GET['register'] === 'success'): ?>
+                            <div class="alert alert-success">สมัครสมาชิกสำเร็จ กรุณาเข้าสู่ระบบ</div>
+                        <?php endif; ?>
+                        <?php if (!empty($error)): ?>
+                            <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>
+                        <?php endif; ?>
+                        <form method="post">
+                            <div class="mb-3">
+                                <label for="username_or_email" class="form-label">ชื่อผู้ใช้หรืออีเมล</label>
+                                <input type="text" name="username_or_email" id="username_or_email" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">รหัสผ่าน</label>
+                                <input type="password" name="password" id="password" class="form-control" required>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-success">เข้าสู่ระบบ</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        <small>ยังไม่มีบัญชี? <a href="register.php">สมัครสมาชิกที่นี่</a></small>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6">
-            <label for="password" class="form-label">รหัสผ่าน</label>
-            <input type="password" name="password" id="password" class="form-control" required>
-        </div>
-        <div class="col-12">
-            <button type="submit" class="btn btn-success">เข้าสู่ระบบ</button>
-            <a href="register.php" class="btn btn-link">สมัครสมาชิก</a>
-        </div>
-    </form>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
 </body>

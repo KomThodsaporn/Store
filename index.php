@@ -40,7 +40,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="row">
         <?php foreach ($products as $product): ?>
             <div class="col-md-4 mb-4">
-                <div class="card h-100">
+                <div class="card h-100 shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title"><?= htmlspecialchars($product['product_name']) ?></h5>
                         <h6 class="card-subtitle mb-2 text-muted"><?= htmlspecialchars($product['category_name']) ?></h6>
@@ -56,12 +56,13 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <small class="text-muted">เข้าสู่ระบบเพื่อสั่งซื้อ</small>
                         <?php endif; ?>
                         <a href="product_detail.php?id=<?= $product['product_id'] ?>"
-                            class="btn btn-sm btn-outline-primary floatend">ดูรายละเอียด</a>
+                            class="btn btn-sm btn-outline-primary ms-1">ดูรายละเอียด</a>
                     </div>
                 </div>
             </div>
         <?php endforeach; ?>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
