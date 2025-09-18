@@ -1,8 +1,7 @@
 <?php
 session_start();
 require '../config.php';
-require 'auth_admin.php';
-// ตรวจสอบสทิ ธิ์admin
+require 'auth_admin.php'; // ตรวจสอบสทิ ธิ์admin
 // ตรวจสอบกำรสง่ ขอ้ มลู จำกฟอรม์
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['u_id'])) {
     $user_id = $_POST['u_id'];
