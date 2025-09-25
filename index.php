@@ -83,6 +83,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     (<?= $_SESSION['role'] ?>)</span>
                 <a href="profile.php" class="btn btn-info">ข้อมูลส่วนตัว</a>
                 <a href="cart.php" class="btn btn-warning">ดูตะกร้า</a>
+                <a href="order.php" class="btn btn-warning">ดูประวัติการสั่งซื้อ</a>
                 <a href="logout.php" class="btn btn-secondary">ออกจากระบบ</a>
             <?php else: ?>
                 <a href="login.php" class="btn btn-success">เข้าสู่ระบบ</a>
